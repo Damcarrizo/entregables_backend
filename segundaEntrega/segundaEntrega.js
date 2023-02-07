@@ -13,7 +13,7 @@ class ProductManager{
         this.path = ProductManager.productPath(this.id)
     }
 
-static productsList =[]
+static products =[]
 
 static idRandom= (length) => {
     let result = ''
@@ -34,14 +34,14 @@ static productPath = (id) =>{
 }
 
 getProducts = () => {
-    console.log(ProductManager.productsList)
+    console.log(ProductManager.products)
 }
 
 addProducts = () => {
-    if ( ProductManager.productsList.find(item=> item.code === this.code))
+    if ( ProductManager.products.find(item=> item.code === this.code))
     {console.log("Producto encontrado, prueba otro")}
     else{
-        ProductManager.productsList.push({
+        ProductManager.products.push({
             id: `${this.id}`,
             title: `${this.title}`,
             description: `${this.description}`,
@@ -56,7 +56,7 @@ addProducts = () => {
 }
 
 getProductByid = (idSearch) =>{
-    let searchResult = ProductManager.productsList.find (item => item.code === idSearch)
+    let searchResult = ProductManager.products.find (item => item.code === idSearch)
 
     if(
         searchResult === idSearch
@@ -88,6 +88,23 @@ deleteProduct = (idEliminar) => {
 
 let newProduct1 = new ProductManager ( "producto prueba 1", "Este es un producto prueba", 200, 'Sin imagen', "abc123", 25)
 
-let newProduct2 = new ProductManager ("producto prueba 2", "Este es un producto prueba", 200, 'Sin imagen', "abc123", 25)
+let newProduct2 = new ProductManager ("producto prueba 2", "Este es un producto prueba", 200, 'Sin imagen', "abc345", 25)
 
 let newProduct3 = new ProductManager ("producto prueba 3", "Este es un producto prueba", 200, 'Sin imagen', "aaa222", 25)
+
+productoNuevo1.getProducts();
+
+productoNuevo1.addProducts();
+
+productoNuevo1.getProducts();
+
+productoNuevo2.addProducts();
+
+productoNuevo2.addProducts();
+
+productoNuevo3.addProducts();
+
+console.log(ProductManager.products)
+
+
+productoNuevo3.getProductByid("aaa222")
