@@ -1,9 +1,11 @@
 {
+  "type": "module",
   "name": "backend_entrega",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./tercerEntrega/server.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +20,7 @@
   },
   "homepage": "https://github.com/Damcarrizo/entregables_backend#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
   }
 }
